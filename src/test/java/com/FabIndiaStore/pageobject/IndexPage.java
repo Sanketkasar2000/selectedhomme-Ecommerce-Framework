@@ -27,9 +27,10 @@ public class IndexPage {
 	
 	@FindBy(xpath = "(//i[@class=\"fa fa-search\"])[2]")
 	WebElement clickOnSearchIcon;
-
 	
-
+	@FindBy(xpath = "//i[@class=\"fa fa-user\"]")
+	WebElement clickOnAccountCreation;
+	
 	public void clickOnHomePageAccountBtn() {
 		homePageAccountBtn.click();
 
@@ -43,6 +44,9 @@ public class IndexPage {
 		SearchProductOnSearchTxt.sendKeys("shirt");
 		clickOnSearchIcon.click();
 	}
-
+	
+	public void clickOnAccountCreation() {
+		clickOnAccountCreation.click();
+	}
 	
 }

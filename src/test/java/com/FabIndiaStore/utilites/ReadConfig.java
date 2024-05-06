@@ -5,7 +5,7 @@ import java.util.Properties;
 
 public class ReadConfig {
 	Properties properties;
-	String path = "C:\\Users\\DELL\\Desktop\\resume sanket\\FabIndiaStore\\configuration\\config.properties";
+	String path = "C:\\Users\\DELL\\Desktop\\resume sanket\\selectedhomme-E-commerce Framework\\configuration\\config.properties";
 
 	public ReadConfig() {
 		try {
