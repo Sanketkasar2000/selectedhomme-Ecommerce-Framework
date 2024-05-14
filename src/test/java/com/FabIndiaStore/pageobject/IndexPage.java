@@ -39,9 +39,16 @@ public class IndexPage {
 	public void ClickOnMyAccountBtn() {
 		RegisterBtn.click();
 	}
+	public void clickOnSearchText() {
+		SearchProductOnSearchTxt.click();
+	}
 	
-	public void searchProduct() {
-		SearchProductOnSearchTxt.sendKeys("shirt");
+	public void searchProduct(String search) {
+		SearchProductOnSearchTxt.sendKeys(search);
+		clickOnSearchIcon.click();
+	}
+	
+	public void clickOnSearchIcon() {
 		clickOnSearchIcon.click();
 	}
 	

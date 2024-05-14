@@ -2,68 +2,82 @@ package com.FabIndiaStore.utilites;
 
 import java.io.FileInputStream;
 
-import java.io.IOException;
-
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ReadExcelFile {
-	public static FileInputStream inputStream;
+	public static FileInputStream inputstream;
 	public static XSSFWorkbook workbook;
-	public static XSSFSheet excelSheet;
-	public static XSSFRow excelRow;
-	public static XSSFCell Cell;
+	public static XSSFSheet excelsheet;
+	public static XSSFRow row;
+	public static XSSFCell cell;
 
-	public static String getCellvalueString(String fileName, String sheetName, int rowno, int cellno)
-			throws IOException {
-
+	public static String getCellvalue(String FileName, String sheetName, int rowNo, int cellNo) {
 		try {
-			inputStream = new FileInputStream(fileName);
-			workbook = new XSSFWorkbook(inputStream);
-			excelSheet = workbook.getSheet(sheetName);
-			Cell = workbook.getSheet(sheetName).getRow(rowno).getCell(cellno);
-
+			inputstream = new FileInputStream(FileName);
+			workbook = new XSSFWorkbook(inputstream);
+			excelsheet = workbook.getSheet(sheetName);
+			cell = workbook.getSheet(sheetName).getRow(rowNo).getCell(cellNo);
 			workbook.close();
-			return Cell.getStringCellValue();
+			return cell.getStringCellValue();
+
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			return "";
 		}
-
 	}
 
-	public static int getRowCount(String fileName, String SheetName) {
+	public static int getRowCount(String FileName, String sheetName) {
+		 try {
+		        System.out.println("Filename: " + FileName);
+		        System.out.println("Sheetname: " + sheetName);
+		        
+		        inputstream = new FileInputStream(FileName);
+		        workbook = new XSSFWorkbook(inputstream);
+		        excelsheet = workbook.getSheetAt(0);
+
+		        if (excelsheet == null) {
+		            System.out.println("Sheet is null.");
+		        } else {
+		            System.out.println("Sheet is not null.");
+		        }
+		        System.out.println(excelsheet.getLastRowNum());
+
+		        int totalRow = excelsheet.getLastRowNum() + 1;
+		        workbook.close();
+		        return totalRow;
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		        return 0;
+		    }
+
+	}
+	
+	public static int getColCount(String FileName, String sheetName) {
 		try {
-			inputStream = new FileInputStream(fileName);
-			workbook = new XSSFWorkbook(inputStream);
-			excelSheet = workbook.getSheet(SheetName);
-			int rowTotalNum = excelSheet.getLastRowNum() + 1;
-			workbook.close();
-
-			return rowTotalNum;
-
-		} catch (Exception e) {
-			return 0;
-
-		}
-
-	}
-
-	public static int getColumCount(String fileName, String SheetName) {
-		try {
-			inputStream = new FileInputStream(fileName);
-			workbook = new XSSFWorkbook(inputStream);
-			excelSheet = workbook.getSheet(SheetName);
-			int cellTotalNum = excelSheet.getRow(0).getLastCellNum();
-			workbook.close();
-			return cellTotalNum;
-
-		} catch (Exception e) {
-			return 0;
-		}
-
-	}
-
+	        inputstream = new FileInputStream(FileName);
+	        workbook = new XSSFWorkbook(inputstream);
+	        excelsheet = workbook.getSheet(sheetName);
+	        
+	        // Get the first row
+	        XSSFRow firstRow = excelsheet.getRow(0);
+	        int totalCol = 0;
+	        if (firstRow != null) {
+	            // Iterate over the cells in the first row and count non-empty cells
+	            for (int i = 0; i < firstRow.getLastCellNum(); i++) {
+	                if (firstRow.getCell(i) != null && !firstRow.getCell(i).toString().isEmpty()) {
+	                    totalCol++;
+	                }
+	            }
+	        }
+	        
+	        workbook.close();
+	        System.out.println(totalCol);
+	        return totalCol;
+	        
+	    } catch (Exception e) {
+	        return 0;
+	    }
+}
 }

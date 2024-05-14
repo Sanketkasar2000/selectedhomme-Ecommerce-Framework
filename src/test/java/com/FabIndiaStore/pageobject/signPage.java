@@ -26,7 +26,7 @@ public class signPage {
 	@FindBy(id = "input-password")
 	WebElement PasswordForSignIn;
 	
-	@FindBy(css = "btn btn-danger btn-den")
+	@FindBy(xpath = "//input[@class=\"btn btn-danger btn-den\"]")
 	WebElement signBTN;
 	
 	public void clickOnSignInBtn() {
@@ -36,11 +36,11 @@ public class signPage {
 		clickOnEmailForSignIn.click();
 	}
 	
-	public void EnterEmail() {
-		EmailID.sendKeys("sanketkasar0601@gmail.com");
+	public void EnterEmail(String emailID) {
+		EmailID.sendKeys(emailID);
 	}
-	public void enterPassword() {
-		PasswordForSignIn.sendKeys("Sanketkasar@12");
+	public void enterPassword(String pass) {
+		PasswordForSignIn.sendKeys(pass);
 	}
 	public void clickOnLogIn() {
 		signBTN.click();
