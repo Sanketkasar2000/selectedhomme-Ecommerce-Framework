@@ -9,10 +9,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class shirtTabPages {
+public class ShirtTabPages {
 	WebDriver ldriver;
 
-	public shirtTabPages(WebDriver rdriver) {
+	public ShirtTabPages(WebDriver rdriver) {
 		ldriver = rdriver;
 		PageFactory.initElements(rdriver, this);
 	}

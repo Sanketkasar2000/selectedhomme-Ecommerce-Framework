@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import com.FabIndiaStore.pageobject.IndexPage;
 import com.FabIndiaStore.pageobject.ListOfProductPages;
 
-public class TC_VerifyProductIsAddedOorNot extends baseClass {
+public class TC_VerifyProductIsAddedOorNot extends BaseClass {
 	@Test
 	public void verifyProductIsAddedOrNot() {
 		IndexPage ind=new IndexPage(driver);

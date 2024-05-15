@@ -8,16 +8,16 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.FabIndiaStore.pageobject.IndexPage;
-import com.FabIndiaStore.pageobject.signPage;
+import com.FabIndiaStore.pageobject.SignPage;
 import com.FabIndiaStore.utilites.ReadExcelFile;
 
-public class TC_LogIn extends baseClass {
+public class TC_LogIn extends BaseClass {
 
 	@Test(dataProvider = "logInDataProvider")
 	public void login(String emailID, String Password) throws InterruptedException {
 		IndexPage ind = new IndexPage(driver);
 		ind.clickOnAccountCreation();
-		signPage si = new signPage(driver);
+		SignPage si = new SignPage(driver);
 		si.clickOnSignInBtn();
 		si.clickOnEMailForSignIn();
 		si.EnterEmail(emailID);

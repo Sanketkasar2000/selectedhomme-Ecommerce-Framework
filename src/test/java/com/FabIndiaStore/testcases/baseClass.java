@@ -13,7 +13,7 @@ import com.FabIndiaStore.utilites.ReadConfig;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.*;
 
-public class baseClass {
+public class BaseClass {
 	ReadConfig confi = new ReadConfig();
 	String url = confi.getBaseUrl();
 	String browser = confi.getBrowswe();

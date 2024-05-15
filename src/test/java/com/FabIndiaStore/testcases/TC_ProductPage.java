@@ -10,7 +10,7 @@ import com.FabIndiaStore.pageobject.IndexPage;
 import com.FabIndiaStore.pageobject.ListOfProductPages;
 import com.FabIndiaStore.utilites.ReadExcelFile;
 
-public class TC_ProductPage extends baseClass {
+public class TC_ProductPage extends BaseClass {
 	@Test(dataProvider = "searchBoxDataProvider")
 	public void searchProduct(String product) {
 		IndexPage ind=new IndexPage(driver);

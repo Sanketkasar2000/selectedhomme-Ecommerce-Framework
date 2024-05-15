@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class signPage {
+public class SignPage {
 	WebDriver ldriver;
-	public signPage(WebDriver rdriver) {
+	public SignPage(WebDriver rdriver) {
 		ldriver=rdriver;
 		PageFactory.initElements(rdriver,this);
 	}

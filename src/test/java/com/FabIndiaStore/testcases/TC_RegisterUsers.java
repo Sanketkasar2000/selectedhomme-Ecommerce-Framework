@@ -3,15 +3,15 @@ package com.FabIndiaStore.testcases;
 import org.testng.annotations.Test;
 
 import com.FabIndiaStore.pageobject.IndexPage;
-import com.FabIndiaStore.pageobject.registerPage;
+import com.FabIndiaStore.pageobject.RegisterPage;
 
-public class TC_RegisterUsers extends baseClass {
+public class TC_RegisterUsers extends BaseClass {
 	@Test
 	public void registerUsers() {
 		IndexPage ind=new IndexPage(driver);
 		ind.clickOnHomePageAccountBtn();
 		ind.ClickOnMyAccountBtn();
-		registerPage reg=new registerPage(driver);
+		RegisterPage reg=new RegisterPage(driver);
 		reg.EnterName();
 		reg.EnterEmailAdd();
 		reg.EnterPassword();

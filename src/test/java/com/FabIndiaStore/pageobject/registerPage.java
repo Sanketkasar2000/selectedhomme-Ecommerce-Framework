@@ -6,10 +6,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
-public class registerPage {
+public class RegisterPage {
 	WebDriver ldriver;
 
-	public registerPage(WebDriver rdriver) {
+	public RegisterPage(WebDriver rdriver) {
 		ldriver = rdriver;
 		PageFactory.initElements(rdriver, this);
 	}

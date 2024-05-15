@@ -12,7 +12,7 @@ import com.FabIndiaStore.pageobject.logOutPage;
 import com.FabIndiaStore.utilites.ReadExcelFile;
 
 
-public class TC_LogOut extends baseClass {
+public class TC_LogOut extends BaseClass {
 	
 	@Test(dataProvider ="logInDataProvider")
 	public void LogOut(String emailId,String password) {

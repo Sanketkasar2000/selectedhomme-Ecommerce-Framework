@@ -4,17 +4,17 @@ package com.FabIndiaStore.testcases;
 import org.testng.annotations.Test;
 
 import com.FabIndiaStore.pageobject.IndexTabs;
-import com.FabIndiaStore.pageobject.allProductPage;
-import com.FabIndiaStore.pageobject.shirtTabPages;
+import com.FabIndiaStore.pageobject.AllProductPage;
+import com.FabIndiaStore.pageobject.ShirtTabPages;
 
-public class TC_validateAllTabsInHomePage extends baseClass{
+public class TC_validateAllTabsInHomePage extends BaseClass{
 	@Test
 	public void validateAllProductTab() {
 		IndexTabs ind=new IndexTabs(driver);
 		ind.clickOnAllProduct();
-		allProductPage all=new allProductPage(driver);
+		AllProductPage all=new AllProductPage(driver);
 		all.clickOnShirtBtn();
-		shirtTabPages sh=new shirtTabPages(driver);
+		ShirtTabPages sh=new ShirtTabPages(driver);
 		sh.clickOFirstShirt();
 		sh.clickOnSizeOfFirstShirt();
 		sh.clickOnAddToCartFirstShirtProduct();

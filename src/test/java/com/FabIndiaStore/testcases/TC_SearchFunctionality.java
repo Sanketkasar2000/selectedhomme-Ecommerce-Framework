@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import com.FabIndiaStore.pageobject.IndexPage;
 import com.FabIndiaStore.utilites.ReadExcelFile;
 
-public class TC_SearchFunctionality extends baseClass {
+public class TC_SearchFunctionality extends BaseClass {
 
 	@Test(dataProvider = "searchBoxDataProvider")
 	public void SearchProductByName(String product) {
