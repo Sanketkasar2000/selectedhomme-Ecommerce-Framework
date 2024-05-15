@@ -31,6 +31,9 @@ public class IndexPage {
 	@FindBy(xpath = "//i[@class=\"fa fa-user\"]")
 	WebElement clickOnAccountCreation;
 	
+	@FindBy(xpath = "(//a[normalize-space()='Order History'])[1]")
+	WebElement OrderHistory;
+	
 	public void clickOnHomePageAccountBtn() {
 		homePageAccountBtn.click();
 
@@ -54,6 +57,9 @@ public class IndexPage {
 	
 	public void clickOnAccountCreation() {
 		clickOnAccountCreation.click();
+	}
+	public void clickOnOrderHistory() {
+		OrderHistory.click();
 	}
 	
 }

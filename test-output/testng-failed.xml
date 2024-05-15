@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.FabIndiaStore.testcases.TC_ProductPage">
+      <class name="com.FabIndiaStore.testcases.TC_ChangePassword">
         <methods>
-          <include name="searchProduct" invocation-numbers="0"/>
           <include name="setup"/>
+          <include name="resetPass" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.FabIndiaStore.testcases.TC_ProductPage -->
+      </class> <!-- com.FabIndiaStore.testcases.TC_ChangePassword -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
